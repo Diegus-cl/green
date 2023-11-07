@@ -6,10 +6,10 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user-auth-form"
 
-export const metadata: Metadata = {
-  title: "Login",
-  description: "Login to your account",
-}
+export const metadata = {
+  title: "Inicia Sesión",
+  description: "Bienvenido de vuelta",
+} as const
 
 export default function LoginPage() {
   return (  
@@ -23,17 +23,17 @@ export default function LoginPage() {
       >
         <>
           <Icons.chevronLeft className="w-4 h-4 mr-2" />
-          Back
+          Atrás
         </>
       </Link>
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
           <Icons.logo className="w-6 h-6 mx-auto" />
           <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
+            {metadata.title}
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your email to sign in to your account
+            {metadata.description}
           </p>
         </div>
         <UserAuthForm />
@@ -42,7 +42,7 @@ export default function LoginPage() {
             href="/register"
             className="underline hover:text-brand underline-offset-4"
           >
-            Don&apos;t have an account? Sign Up
+            ¿No tienes una cuenta? Regístrate
           </Link>
         </p>
       </div>

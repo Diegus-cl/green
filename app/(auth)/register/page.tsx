@@ -6,8 +6,8 @@ import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user-auth-form"
 
 export const metadata = {
-  title: "Create an account",
-  description: "Create an account to get started.",
+  title: "Crea una cuenta",
+  description: "Alístate para organizarte de una nueva manera",
 }
 
 export default function RegisterPage() {
@@ -28,10 +28,10 @@ export default function RegisterPage() {
           <div className="flex flex-col space-y-2 text-center">
             <Icons.logo className="w-6 h-6 mx-auto" />
             <h1 className="text-2xl font-semibold tracking-tight">
-              Create an account
+              {metadata.title}
             </h1>
             <p className="text-sm text-muted-foreground">
-              Enter your email below to create your account
+              {metadata.description}
             </p>
           </div>
           <UserAuthForm />
