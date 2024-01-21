@@ -1,10 +1,36 @@
 "use client"
 
+import { DayCard } from '@/components/day-card';
 import { ReservationCard } from './../components/ReservationCard';
+import { CalendarIconButton } from '@/components/calendar-icon-button';
 
 // import Image from 'next/image'
 
 const reservations = [
+  {
+    startTime: '6:00 AM',
+    endTime: '7:00 AM',
+    featuredName: 'Maleno',
+    currReservations: 3,
+    reservationLimit: 24,
+    classType: 'crossfit',
+  },
+  {
+    startTime: '7:00 AM',
+    endTime: '8:00 AM',
+    featuredName: 'Maleno',
+    currReservations: 3,
+    reservationLimit: 24,
+    classType: 'crossfit',
+  },
+  {
+    startTime: '8:00 AM',
+    endTime: '9:00 PM',
+    featuredName: 'Maleno',
+    currReservations: 3,
+    reservationLimit: 24,
+    classType: 'crossfit',
+  },
   {
     startTime: '9:00 AM',
     endTime: '10:00 AM',
@@ -14,48 +40,32 @@ const reservations = [
     classType: 'crossfit',
   },
   {
-    startTime: '10:00 AM',
-    endTime: '11:00 AM',
+    startTime: '4:00 PM',
+    endTime: '5:00 PM',
     featuredName: 'Maleno',
     currReservations: 3,
     reservationLimit: 24,
     classType: 'open box',
   },
   {
-    startTime: '11:00 AM',
-    endTime: '12:00 PM',
+    startTime: '5:00 PM',
+    endTime: '6:00 PM',
     featuredName: 'Maleno',
     currReservations: 3,
     reservationLimit: 24,
     classType: 'open box',
   },
   {
-    startTime: '12:00 PM',
-    endTime: '1:00 PM',
+    startTime: '7:00 PM',
+    endTime: '8:00 PM',
     featuredName: 'Maleno',
     currReservations: 3,
     reservationLimit: 24,
-    classType: 'open box',
+    classType: 'crossfit',
   },
   {
-    startTime: '1:00 PM',
-    endTime: '2:00 PM',
-    featuredName: 'Maleno',
-    currReservations: 3,
-    reservationLimit: 24,
-    classType: 'open box',
-  },
-  {
-    startTime: '2:00 PM',
-    endTime: '3:00 PM',
-    featuredName: 'Maleno',
-    currReservations: 3,
-    reservationLimit: 24,
-    classType: 'open box',
-  },
-  {
-    startTime: '3:00 PM',
-    endTime: '4:00 PM',
+    startTime: '8:00 PM',
+    endTime: '9:00 PM',
     featuredName: 'Maleno',
     currReservations: 3,
     reservationLimit: 24,
@@ -67,6 +77,8 @@ const reservations = [
 export default function Home() {
   return (
     <main className="w-full h-screen p-10 overflow-y-scroll md:pt-10 pt-[180px] ">
+      <DayCard />
+      <CalendarIconButton day={10} dayOfWeekId={2} monthId={10} isActive={false}/>
       <h1 className="mb-12 font-bold text-transparent uppercase text-step-2 bg-gradient-to-b from-zinc-200 to-zinc-200/30 bg-clip-text">CLASES DE HOY</h1>
 
       <div className='mb-12'>
@@ -76,7 +88,7 @@ export default function Home() {
               key={index}
               startTime={reservation.startTime}
               endTime={reservation.endTime}
-              featuredName={reservation.featuredName}
+              featuredName={"Coach: " + reservation.featuredName}
               currReservations={reservation.currReservations}
               reservationLimit={reservation.reservationLimit}
               tag={reservation.classType}
